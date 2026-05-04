@@ -1,788 +1,1160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unshakable You — Free Identity Reset Mini-Course</title>
-<meta name="description" content="The free 5-step Identity Reset mini-course by A.B. Mustikin. See It, Name It, Shape It, Live It, Protect It.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --gold: #C9A84C;
-    --gold-hover: #B8953E;
-    --gold-dim: rgba(201,168,76,0.12);
-    --gold-text: #8A6C28;
-    --gold-border: rgba(201,168,76,0.3);
-    --bg: #FAFAF8;
-    --surface: #FFFFFF;
-    --surface2: #F5F3EE;
-    --border: rgba(0,0,0,0.09);
-    --border-mid: rgba(0,0,0,0.14);
-    --text: #1A1714;
-    --text-mid: #4A4540;
-    --text-muted: #8A837A;
-    --text-faint: #B0A99F;
-    --radius: 10px;
-    --radius-sm: 6px;
-    --radius-pill: 20px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.06);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #16140F;
-      --surface: #1E1B14;
-      --surface2: #252118;
-      --border: rgba(255,255,255,0.08);
-      --border-mid: rgba(255,255,255,0.13);
-      --text: #F0EDE6;
-      --text-mid: #C8C0B4;
-      --text-muted: #847C70;
-      --text-faint: #5C5650;
-      --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 4px 16px rgba(0,0,0,0.3);
-      --gold-text: #D4AE5A;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unshakable You — Free Identity Reset Mini-Course</title>
+  <meta name="description"
+    content="The free 5-step Identity Reset mini-course by A.B. Mustikin. See It, Name It, Shape It, Live It, Protect It.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-  }
 
-  html, body {
-    height: 100%;
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    font-size: 15px;
-    line-height: 1.7;
-  }
+    :root {
+      --gold: #C9A84C;
+      --gold-hover: #B8953E;
+      --gold-dim: rgba(201, 168, 76, 0.12);
+      --gold-text: #8A6C28;
+      --gold-border: rgba(201, 168, 76, 0.3);
+      --bg: #FAFAF8;
+      --surface: #FFFFFF;
+      --surface2: #F5F3EE;
+      --border: rgba(0, 0, 0, 0.09);
+      --border-mid: rgba(0, 0, 0, 0.14);
+      --text: #1A1714;
+      --text-mid: #4A4540;
+      --text-muted: #8A837A;
+      --text-faint: #B0A99F;
+      --radius: 10px;
+      --radius-sm: 6px;
+      --radius-pill: 20px;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
 
-  /* ── LAYOUT ── */
-  .shell {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    max-width: 960px;
-    margin: 0 auto;
-    background: var(--surface);
-    box-shadow: var(--shadow);
-  }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #16140F;
+        --surface: #1E1B14;
+        --surface2: #252118;
+        --border: rgba(255, 255, 255, 0.08);
+        --border-mid: rgba(255, 255, 255, 0.13);
+        --text: #F0EDE6;
+        --text-mid: #C8C0B4;
+        --text-muted: #847C70;
+        --text-faint: #5C5650;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.3);
+        --gold-text: #D4AE5A;
+      }
+    }
 
-  /* ── TOP BAR ── */
-  .topbar {
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-    height: 54px;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface2);
-  }
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-  .brand-mark {
-    width: 30px; height: 30px;
-    border-radius: 7px;
-    background: var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 14px; color: #fff; font-weight: 500;
-    flex-shrink: 0;
-  }
-  .brand-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 15px; font-weight: 500;
-    color: var(--text);
-  }
-  .brand-name em { color: var(--gold); font-style: normal; }
-  .progress-wrap {
-    display: flex; align-items: center; gap: 10px;
-  }
-  .progress-track {
-    width: 130px; height: 3px;
-    background: var(--border);
-    border-radius: 2px; overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%; border-radius: 2px;
-    background: var(--gold);
-    transition: width 0.45s ease;
-  }
-  .progress-label {
-    font-size: 12px;
-    color: var(--text-muted);
-    min-width: 56px;
-    text-align: right;
-  }
+    html,
+    body {
+      height: 100%;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.7;
+    }
 
-  /* ── BODY ── */
-  .body-wrap {
-    display: flex;
-    flex: 1;
-    min-height: 0;
-  }
+    /* ── LAYOUT ── */
+    .shell {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
 
-  /* ── SIDEBAR ── */
-  .sidebar {
-    flex-shrink: 0;
-    width: 224px;
-    border-right: 1px solid var(--border);
-    overflow-y: auto;
-    background: var(--surface2);
-    padding: 16px 0;
-  }
-  .sidebar-label {
-    padding: 0 16px 8px;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-faint);
-  }
-  .sb-btn {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-    padding: 9px 16px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    text-align: left;
-    transition: background 0.12s;
-    border-right: 2px solid transparent;
-  }
-  .sb-btn:hover { background: rgba(0,0,0,0.04); }
-  @media (prefers-color-scheme: dark) {
-    .sb-btn:hover { background: rgba(255,255,255,0.04); }
-  }
-  .sb-btn.active {
-    background: var(--gold-dim);
-    border-right-color: var(--gold);
-  }
-  .sb-btn.locked { opacity: 0.38; cursor: default; }
-  .sb-dot {
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    border: 1.5px solid var(--border-mid);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    font-size: 9px; font-weight: 500;
-    color: var(--text-muted);
-    margin-top: 1px;
-    transition: all 0.2s;
-  }
-  .sb-btn.done .sb-dot {
-    background: var(--gold); border-color: var(--gold);
-    color: #fff; font-size: 11px;
-  }
-  .sb-btn.active .sb-dot {
-    border-color: var(--gold); color: var(--gold);
-  }
-  .sb-text {
-    font-size: 12px;
-    color: var(--text-mid);
-    line-height: 1.4;
-    padding-top: 2px;
-  }
-  .sb-btn.active .sb-text { color: var(--text); font-weight: 500; }
-  .sb-btn.done .sb-text { color: var(--text-muted); }
-  .lock-icon { font-size: 10px; }
+    /* ── TOP BAR ── */
+    .topbar {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      height: 54px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface2);
+    }
 
-  /* ── CONTENT ── */
-  .content {
-    flex: 1;
-    overflow-y: auto;
-    padding: 32px 36px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
 
-  /* ── LESSON ── */
-  .lesson-meta { display: flex; align-items: center; gap: 10px; }
-  .step-pill {
-    font-size: 10px; font-weight: 500;
-    padding: 3px 11px;
-    border-radius: var(--radius-pill);
-    background: var(--gold-dim);
-    color: var(--gold-text);
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-  }
-  .lesson-num { font-size: 12px; color: var(--text-muted); }
-  .lesson-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px; font-weight: 500;
-    color: var(--text);
-    line-height: 1.3;
-  }
-  .lesson-sub {
-    font-size: 13px;
-    color: var(--text-muted);
-    line-height: 1.65;
-    font-style: italic;
-  }
-  .divider { height: 1px; background: var(--border); }
-  .lesson-body {
-    display: flex; flex-direction: column; gap: 13px;
-    font-size: 14px; color: var(--text-mid); line-height: 1.78;
-  }
-  .highlight {
-    border-left: 2.5px solid var(--gold);
-    padding: 12px 16px;
-    background: var(--gold-dim);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    font-size: 13px; line-height: 1.65;
-    color: var(--text);
-  }
-  .loop-wrap {
-    display: flex; flex-wrap: wrap; gap: 5px; align-items: center;
-    padding: 13px 16px;
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-  }
-  .loop-pill {
-    font-size: 11px; font-weight: 500;
-    padding: 4px 10px;
-    border-radius: var(--radius-pill);
-    background: var(--gold-dim);
-    color: var(--gold-text);
-  }
-  .loop-arrow { font-size: 11px; color: var(--text-faint); }
-  .exercise-box {
-    border: 1px solid var(--border-mid);
-    border-radius: var(--radius);
-    padding: 16px 20px;
-    display: flex; flex-direction: column; gap: 10px;
-  }
-  .exercise-label {
-    font-size: 10px; font-weight: 500;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--gold);
-  }
-  .exercise-q {
-    font-size: 13px; font-weight: 500;
-    color: var(--text); line-height: 1.45;
-  }
-  textarea {
-    width: 100%;
-    padding: 10px 13px;
-    font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
-    line-height: 1.65;
-    background: var(--surface2);
-    border: 1px solid var(--border-mid);
-    border-radius: var(--radius-sm);
-    color: var(--text);
-    resize: vertical;
-    min-height: 90px;
-    transition: border-color 0.15s, box-shadow 0.15s;
-  }
-  textarea:focus {
-    outline: none;
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
-  }
-  .key-points { display: flex; flex-direction: column; gap: 7px; }
-  .key-point {
-    display: flex; gap: 10px; align-items: flex-start;
-    font-size: 13px; color: var(--text-mid); line-height: 1.55;
-  }
-  .kp-dot {
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--gold);
-    margin-top: 8px; flex-shrink: 0;
-  }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 7px;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      color: #fff;
+      font-weight: 500;
+      flex-shrink: 0;
+    }
 
-  /* ── OVERVIEW ── */
-  .overview {
-    display: flex; flex-direction: column; gap: 22px;
-    padding: 4px 0;
-  }
-  .ov-hero {
-    text-align: center;
-    display: flex; flex-direction: column; align-items: center;
-    gap: 12px;
-    padding-bottom: 22px;
-    border-bottom: 1px solid var(--border);
-  }
-  .ov-eyebrow {
-    font-size: 10px; font-weight: 500;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--gold-text);
-    padding: 3px 12px;
-    border-radius: var(--radius-pill);
-    background: var(--gold-dim);
-  }
-  .ov-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px; font-weight: 500;
-    color: var(--text); line-height: 1.25;
-  }
-  .ov-desc {
-    font-size: 13px; color: var(--text-muted);
-    line-height: 1.65; max-width: 420px;
-  }
-  .ov-stats {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-  }
-  .ov-stat {
-    background: var(--surface2);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 14px; text-align: center;
-  }
-  .ov-stat-n {
-    font-size: 22px; font-weight: 500;
-    color: var(--gold);
-  }
-  .ov-stat-l {
-    font-size: 11px; color: var(--text-muted);
-    margin-top: 2px;
-  }
-  .ov-steps { display: flex; flex-direction: column; gap: 8px; }
-  .ov-step {
-    display: flex; align-items: flex-start; gap: 12px;
-    padding: 11px 14px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    background: var(--surface);
-  }
-  .ov-num {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    background: var(--gold-dim);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 500;
-    color: var(--gold-text);
-    flex-shrink: 0; margin-top: 1px;
-  }
-  .ov-step-t { font-size: 13px; font-weight: 500; color: var(--text); }
-  .ov-step-d { font-size: 12px; color: var(--text-muted); margin-top: 2px; line-height: 1.45; }
-  .ov-author {
-    display: flex; align-items: center; gap: 14px;
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface2);
-  }
-  .ov-avatar {
-    width: 42px; height: 42px;
-    border-radius: 50%;
-    background: var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 16px; color: #fff;
-    flex-shrink: 0;
-  }
-  .ov-author-name { font-size: 13px; font-weight: 500; color: var(--text); }
-  .ov-author-role { font-size: 12px; color: var(--text-muted); }
-  .btn-start {
-    width: 100%; padding: 13px;
-    background: var(--gold);
-    border: none; border-radius: var(--radius);
-    color: #fff;
-    font-size: 14px; font-weight: 500;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer;
-    transition: background 0.15s;
-    letter-spacing: 0.01em;
-  }
-  .btn-start:hover { background: var(--gold-hover); }
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+    }
 
-  /* ── EMAIL GATE ── */
-  .gate {
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 18px;
-    padding: 40px 20px;
-    text-align: center;
-    min-height: 360px;
-  }
-  .gate-icon {
-    width: 52px; height: 52px;
-    border-radius: 50%;
-    background: var(--gold-dim);
-    display: flex; align-items: center; justify-content: center;
-  }
-  .gate-icon svg {
-    width: 22px; height: 22px;
-    stroke: var(--gold); fill: none; stroke-width: 1.8;
-  }
-  .gate h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px; font-weight: 500;
-    color: var(--text); line-height: 1.3;
-    max-width: 380px;
-  }
-  .gate p {
-    font-size: 13px; color: var(--text-muted);
-    line-height: 1.65; max-width: 360px;
-  }
-  .gate-form {
-    display: flex; flex-direction: column;
-    gap: 10px; width: 100%; max-width: 360px;
-  }
-  .gate-input {
-    width: 100%; padding: 10px 14px;
-    font-size: 13px; font-family: 'DM Sans', sans-serif;
-    border: 1px solid var(--border-mid);
-    border-radius: var(--radius-sm);
-    background: var(--surface2);
-    color: var(--text);
-    transition: border-color 0.15s, box-shadow 0.15s;
-  }
-  .gate-input:focus {
-    outline: none;
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(201,168,76,0.15);
-  }
-  .gate-row { display: flex; gap: 8px; }
-  .gate-row .gate-input { flex: 1; }
-  .gate-submit {
-    padding: 10px 22px;
-    background: var(--gold);
-    border: none; border-radius: var(--radius-sm);
-    color: #fff; font-size: 13px; font-weight: 500;
-    font-family: 'DM Sans', sans-serif;
-    cursor: pointer; white-space: nowrap;
-    transition: background 0.15s;
-  }
-  .gate-submit:hover { background: var(--gold-hover); }
-  .gate-error {
-    font-size: 12px; color: #C0392B;
-    display: none;
-  }
-  .gate-note { font-size: 11px; color: var(--text-faint); }
+    .brand-name em {
+      color: var(--gold);
+      font-style: normal;
+    }
 
-  /* ── CERTIFICATE ── */
-  .cert { display: flex; flex-direction: column; }
-  .cert-top {
-    padding: 28px 32px;
-    background: var(--gold-dim);
-    border-bottom: 1px solid var(--gold-border);
-    text-align: center;
-    display: flex; flex-direction: column;
-    align-items: center; gap: 10px;
-  }
-  .cert-seal {
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    border: 2px solid var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 22px; color: var(--gold);
-  }
-  .cert-eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-text); }
-  .cert-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 22px; font-weight: 500; color: var(--text);
-  }
-  .cert-label { font-size: 12px; color: var(--text-muted); }
-  .cert-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px; font-style: italic;
-    color: var(--gold-text);
-  }
-  .cert-book { font-size: 13px; color: var(--text-muted); }
-  .cert-body {
-    padding: 24px 32px;
-    display: flex; flex-direction: column; gap: 20px;
-  }
-  .cert-steps {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
-  }
-  .cert-step {
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 10px 6px;
-    text-align: center;
-    background: var(--surface2);
-  }
-  .cs-n { font-size: 10px; color: var(--text-faint); margin-bottom: 4px; }
-  .cs-t { font-size: 11px; font-weight: 500; color: var(--gold-text); }
-  .cert-msg {
-    font-size: 13px; color: var(--text-muted);
-    line-height: 1.7; text-align: center;
-    font-style: italic;
-  }
-  .cert-ctas {
-    display: flex; flex-direction: column;
-    align-items: center; gap: 10px;
-  }
-  .btn-book {
-    display: block; width: 100%; max-width: 340px;
-    padding: 13px 24px;
-    background: var(--gold);
-    border: none; border-radius: var(--radius);
-    color: #fff; font-size: 14px; font-weight: 500;
-    font-family: 'DM Sans', sans-serif;
-    text-decoration: none; text-align: center;
-    cursor: pointer;
-    transition: background 0.15s;
-  }
-  .btn-book:hover { background: var(--gold-hover); }
-  .btn-cohort {
-    display: block; width: 100%; max-width: 340px;
-    padding: 11px 24px;
-    background: transparent;
-    border: 1px solid var(--border-mid);
-    border-radius: var(--radius);
-    color: var(--text-mid); font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
-    text-decoration: none; text-align: center;
-    cursor: pointer;
-    transition: background 0.12s;
-  }
-  .btn-cohort:hover { background: var(--surface2); }
-  .cert-date { font-size: 11px; color: var(--text-faint); }
-  .cert-share {
-    display: flex; align-items: center; gap: 10px;
-    justify-content: center;
-    font-size: 12px; color: var(--text-muted);
-  }
-  .share-pill {
-    padding: 5px 14px;
-    border: 1px solid var(--border-mid);
-    border-radius: var(--radius-pill);
-    font-size: 12px; color: var(--text-mid);
-    background: transparent; cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: background 0.12s;
-  }
-  .share-pill:hover { background: var(--surface2); }
+    .progress-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-  /* ── BOTTOM BAR ── */
-  .bottombar {
-    flex-shrink: 0;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 12px 24px;
-    border-top: 1px solid var(--border);
-    background: var(--surface2);
-    height: 54px;
-  }
-  .btn-nav {
-    padding: 7px 18px;
-    font-size: 13px; font-weight: 500;
-    font-family: 'DM Sans', sans-serif;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .btn-prev {
-    background: transparent;
-    border: 1px solid var(--border-mid);
-    color: var(--text-muted);
-  }
-  .btn-prev:hover { background: var(--surface2); }
-  .btn-next {
-    background: var(--gold);
-    border: none; color: #fff;
-  }
-  .btn-next:hover { background: var(--gold-hover); }
-  .btn-finish {
-    background: #2E7D32;
-    border: none; color: #fff;
-  }
-  .btn-finish:hover { background: #256228; }
-  .center-info { font-size: 12px; color: var(--text-faint); }
+    .progress-track {
+      width: 130px;
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
 
-  /* ── MOBILE ── */
-  @media (max-width: 640px) {
-    .sidebar { display: none; }
-    .content { padding: 20px 18px; gap: 16px; }
-    .topbar { padding: 0 16px; }
-    .bottombar { padding: 10px 16px; }
-    .cert-steps { grid-template-columns: repeat(3, 1fr); }
-    .ov-stats { grid-template-columns: repeat(3, 1fr); }
-    .progress-track { width: 80px; }
-  }
-</style>
+    .progress-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--gold);
+      transition: width 0.45s ease;
+    }
+
+    .progress-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      min-width: 56px;
+      text-align: right;
+    }
+
+    /* ── BODY ── */
+    .body-wrap {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      flex-shrink: 0;
+      width: 224px;
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      background: var(--surface2);
+      padding: 16px 0;
+    }
+
+    .sidebar-label {
+      padding: 0 16px 8px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-faint);
+    }
+
+    .sb-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      width: 100%;
+      padding: 9px 16px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      text-align: left;
+      transition: background 0.12s;
+      border-right: 2px solid transparent;
+    }
+
+    .sb-btn:hover {
+      background: rgba(0, 0, 0, 0.04);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .sb-btn:hover {
+        background: rgba(255, 255, 255, 0.04);
+      }
+    }
+
+    .sb-btn.active {
+      background: var(--gold-dim);
+      border-right-color: var(--gold);
+    }
+
+    .sb-btn.locked {
+      opacity: 0.38;
+      cursor: default;
+    }
+
+    .sb-dot {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 1px;
+      transition: all 0.2s;
+    }
+
+    .sb-btn.done .sb-dot {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #fff;
+      font-size: 11px;
+    }
+
+    .sb-btn.active .sb-dot {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .sb-text {
+      font-size: 12px;
+      color: var(--text-mid);
+      line-height: 1.4;
+      padding-top: 2px;
+    }
+
+    .sb-btn.active .sb-text {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .sb-btn.done .sb-text {
+      color: var(--text-muted);
+    }
+
+    .lock-icon {
+      font-size: 10px;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      flex: 1;
+      overflow-y: auto;
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── LESSON ── */
+    .lesson-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .step-pill {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 11px;
+      border-radius: var(--radius-pill);
+      background: var(--gold-dim);
+      color: var(--gold-text);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+    }
+
+    .lesson-num {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .lesson-h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .lesson-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-style: italic;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+    }
+
+    .lesson-body {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.78;
+    }
+
+    .highlight {
+      border-left: 2.5px solid var(--gold);
+      padding: 12px 16px;
+      background: var(--gold-dim);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .loop-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      align-items: center;
+      padding: 13px 16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+
+    .loop-pill {
+      font-size: 11px;
+      font-weight: 500;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: var(--gold-dim);
+      color: var(--gold-text);
+    }
+
+    .loop-arrow {
+      font-size: 11px;
+      color: var(--text-faint);
+    }
+
+    .exercise-box {
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .exercise-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .exercise-q {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px 13px;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.65;
+      background: var(--surface2);
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      resize: vertical;
+      min-height: 90px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+    }
+
+    .key-points {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .key-point {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.55;
+    }
+
+    .kp-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin-top: 8px;
+      flex-shrink: 0;
+    }
+
+    /* ── OVERVIEW ── */
+    .overview {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding: 4px 0;
+    }
+
+    .ov-hero {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ov-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-text);
+      padding: 3px 12px;
+      border-radius: var(--radius-pill);
+      background: var(--gold-dim);
+    }
+
+    .ov-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.25;
+    }
+
+    .ov-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 420px;
+    }
+
+    .ov-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .ov-stat {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      text-align: center;
+    }
+
+    .ov-stat-n {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--gold);
+    }
+
+    .ov-stat-l {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .ov-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ov-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+    }
+
+    .ov-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold-text);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .ov-step-t {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .ov-step-d {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      line-height: 1.45;
+    }
+
+    .ov-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface2);
+    }
+
+    .ov-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .ov-author-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .ov-author-role {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .btn-start {
+      width: 100%;
+      padding: 13px;
+      background: var(--gold);
+      border: none;
+      border-radius: var(--radius);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      transition: background 0.15s;
+      letter-spacing: 0.01em;
+    }
+
+    .btn-start:hover {
+      background: var(--gold-hover);
+    }
+
+    /* ── EMAIL GATE ── */
+    .gate {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 40px 20px;
+      text-align: center;
+      min-height: 360px;
+    }
+
+    .gate-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--gold-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .gate-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    .gate h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.3;
+      max-width: 380px;
+    }
+
+    .gate p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 360px;
+    }
+
+    .gate-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .gate-input {
+      width: 100%;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius-sm);
+      background: var(--surface2);
+      color: var(--text);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+
+    .gate-input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+    }
+
+    .gate-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .gate-row .gate-input {
+      flex: 1;
+    }
+
+    .gate-submit {
+      padding: 10px 22px;
+      background: var(--gold);
+      border: none;
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    .gate-submit:hover {
+      background: var(--gold-hover);
+    }
+
+    .gate-error {
+      font-size: 12px;
+      color: #C0392B;
+      display: none;
+    }
+
+    .gate-note {
+      font-size: 11px;
+      color: var(--text-faint);
+    }
+
+    /* ── CERTIFICATE ── */
+    .cert {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-top {
+      padding: 28px 32px;
+      background: var(--gold-dim);
+      border-bottom: 1px solid var(--gold-border);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cert-seal {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      color: var(--gold);
+    }
+
+    .cert-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-text);
+    }
+
+    .cert-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .cert-label {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .cert-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--gold-text);
+    }
+
+    .cert-book {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .cert-body {
+      padding: 24px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .cert-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+    }
+
+    .cert-step {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 6px;
+      text-align: center;
+      background: var(--surface2);
+    }
+
+    .cs-n {
+      font-size: 10px;
+      color: var(--text-faint);
+      margin-bottom: 4px;
+    }
+
+    .cs-t {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gold-text);
+    }
+
+    .cert-msg {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .cert-ctas {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-book {
+      display: block;
+      width: 100%;
+      max-width: 340px;
+      padding: 13px 24px;
+      background: var(--gold);
+      border: none;
+      border-radius: var(--radius);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btn-book:hover {
+      background: var(--gold-hover);
+    }
+
+    .btn-cohort {
+      display: block;
+      width: 100%;
+      max-width: 340px;
+      padding: 11px 24px;
+      background: transparent;
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius);
+      color: var(--text-mid);
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+
+    .btn-cohort:hover {
+      background: var(--surface2);
+    }
+
+    .cert-date {
+      font-size: 11px;
+      color: var(--text-faint);
+    }
+
+    .cert-share {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .share-pill {
+      padding: 5px 14px;
+      border: 1px solid var(--border-mid);
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      color: var(--text-mid);
+      background: transparent;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: background 0.12s;
+    }
+
+    .share-pill:hover {
+      background: var(--surface2);
+    }
+
+    /* ── BOTTOM BAR ── */
+    .bottombar {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      border-top: 1px solid var(--border);
+      background: var(--surface2);
+      height: 54px;
+    }
+
+    .btn-nav {
+      padding: 7px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .btn-prev {
+      background: transparent;
+      border: 1px solid var(--border-mid);
+      color: var(--text-muted);
+    }
+
+    .btn-prev:hover {
+      background: var(--surface2);
+    }
+
+    .btn-next {
+      background: var(--gold);
+      border: none;
+      color: #fff;
+    }
+
+    .btn-next:hover {
+      background: var(--gold-hover);
+    }
+
+    .btn-finish {
+      background: #2E7D32;
+      border: none;
+      color: #fff;
+    }
+
+    .btn-finish:hover {
+      background: #256228;
+    }
+
+    .center-info {
+      font-size: 12px;
+      color: var(--text-faint);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 640px) {
+      .sidebar {
+        display: none;
+      }
+
+      .content {
+        padding: 20px 18px;
+        gap: 16px;
+      }
+
+      .topbar {
+        padding: 0 16px;
+      }
+
+      .bottombar {
+        padding: 10px 16px;
+      }
+
+      .cert-steps {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .ov-stats {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .progress-track {
+        width: 80px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="shell">
+  <div class="shell">
 
-  <!-- TOP BAR -->
-  <header class="topbar">
-    <a class="brand" href="https://www.amazon.com/dp/B0G3PXRS9Y" target="_blank" rel="noopener">
-      <div class="brand-mark">U</div>
-      <div class="brand-name">Unshakable <em>You</em></div>
-    </a>
-    <div class="progress-wrap">
-      <div class="progress-track"><div class="progress-fill" id="pbar"></div></div>
-      <div class="progress-label" id="plabel">Overview</div>
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <a class="brand" href="https://www.amazon.com/dp/B0G3PXRS9Y" target="_blank" rel="noopener">
+        <div class="brand-mark">U</div>
+        <div class="brand-name">Unshakable <em>You</em></div>
+      </a>
+      <div class="progress-wrap">
+        <div class="progress-track">
+          <div class="progress-fill" id="pbar"></div>
+        </div>
+        <div class="progress-label" id="plabel">Overview</div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <div class="body-wrap">
+      <nav class="sidebar" id="sidebar" aria-label="Course lessons"></nav>
+      <main class="content" id="content" role="main"></main>
     </div>
-  </header>
 
-  <!-- BODY -->
-  <div class="body-wrap">
-    <nav class="sidebar" id="sidebar" aria-label="Course lessons"></nav>
-    <main class="content" id="content" role="main"></main>
+    <!-- BOTTOM BAR -->
+    <footer class="bottombar">
+      <button class="btn-nav btn-prev" id="btnPrev" onclick="go(-1)" aria-label="Previous lesson">← Previous</button>
+      <span class="center-info" id="centerInfo"></span>
+      <button class="btn-nav btn-next" id="btnNext" onclick="go(1)" aria-label="Next lesson">Begin course →</button>
+    </footer>
+
   </div>
 
-  <!-- BOTTOM BAR -->
-  <footer class="bottombar">
-    <button class="btn-nav btn-prev" id="btnPrev" onclick="go(-1)" aria-label="Previous lesson">← Previous</button>
-    <span class="center-info" id="centerInfo"></span>
-    <button class="btn-nav btn-next" id="btnNext" onclick="go(1)" aria-label="Next lesson">Begin course →</button>
-  </footer>
+  <script>
+    const LESSONS = [
+      {
+        id: 'ov', sidebar: 'Course overview', step: 'Overview', type: 'overview'
+      },
+      {
+        id: 'l1', sidebar: 'Why habits fail', step: 'Introduction',
+        title: 'Why identity — not habits — is the real game',
+        sub: 'Before we change what we do, we have to understand what has been running the show.',
+        body: [
+          'You have tried motivation. Habits. Routines. Accountability partners. Vision boards. And for a while — maybe even a long while — some of it worked. Then one hard week hit, and you were back to square one.',
+          'The problem was never your discipline. The problem was the identity underneath it. You can stack every habit in the world on top of a broken belief system — the foundation will crack. Every time.',
+          'This is the entire premise of the Unshakable You framework. We do not fix your habits. We fix what is running underneath them.'
+        ],
+        highlight: 'Habits fail when the identity underneath stays broken. That is the pattern we are here to break.',
+        loop: null,
+        ex: { q: 'What is one habit or goal you have tried more than once and failed to sustain?', p: 'e.g. Waking up at 5am, going to the gym consistently, not procrastinating...' },
+        kp: ['Identity shapes behaviour — not the other way around', 'Surface changes do not stick without root changes', 'Your old self will fight the new one — unless you are prepared']
+      },
+      {
+        id: 'l2', sidebar: 'Expose the loop', step: 'Step 1: See It',
+        title: 'Expose the identity that has been running your life',
+        sub: 'You cannot change what you cannot see. This step is all about clarity.',
+        body: [
+          'Somewhere, quietly, you have a belief about who you are. It might sound like: "I am not disciplined." "I am not smart enough." "I am not the kind of person who succeeds at things like that."',
+          'You probably did not choose that belief. It was handed to you — by a teacher, a parent, a failure that happened once and became a story that happened forever.',
+          'That belief is running a loop. And that loop is your life right now.'
+        ],
+        highlight: null,
+        loop: ['Your Belief', '→', 'What You Focus On', '→', 'What You Feel', '→', 'What You Do', '→', 'The Result', '→', 'Proof the belief is "right"'],
+        ex: { q: 'Complete this: "When it comes to the area I want to change, I secretly believe I am someone who..."', p: 'e.g. I secretly believe I am someone who cannot follow through, who always needs external pressure...' },
+        kp: ['The belief usually runs silently — spotting it is the whole step', 'Do not judge the belief yet. Just see it.', 'Your loop is not a character flaw. It is a learned pattern.']
+      },
+      {
+        id: 'l3', sidebar: 'Meet Old Me', step: 'Step 2: Name It', gated: true,
+        title: 'Meet Old Me — and decide what is actually true',
+        sub: 'A lie loses half its power the moment you name it.',
+        body: [
+          'Now that you can see the belief, you can name it. Old Me is the version of you who has been operating from this belief. Old Me is not bad — Old Me was doing their best with a script they were handed. But Old Me\'s time is up.',
+          'Before you design Next Me, you need to separate two things your brain has confused for years: facts, and the meaning you gave them.',
+          'A fact: you failed a test once. The story you added: "I am not a smart person." The story is not the fact. And stories can be rewritten.'
+        ],
+        highlight: 'The belief is not reality. It is an interpretation. And interpretations can be rewritten.',
+        loop: null,
+        ex: { q: 'Name your Old Me belief in one sentence. Then write the original fact it came from — and the story you added on top.', p: 'Old Me belief: I am someone who...\nOriginal fact: This happened...\nStory I added: Which means I am...' },
+        kp: ['Old Me is your outdated operating system — not your enemy', 'Facts are neutral. Stories are chosen.', 'You chose the story unconsciously. Now choose it consciously.']
+      },
+      {
+        id: 'l4', sidebar: 'Design Next Me', step: 'Step 2: Name It',
+        title: 'Design your Next Me — no fantasy, just direction',
+        sub: 'Next Me is not who you wish you were. It is who you are actually becoming.',
+        body: [
+          'Most people fail at identity change because they design a Next Me that is too far away. "I want to be fearless and confident in every room." That is not a Next Me. That is a Hollywood character.',
+          'Next Me is realistic. Next Me is 6–12 months from now. Next Me has specific beliefs, specific behaviours, and specific proof you are becoming them.',
+          'Next Me is a direction, not a destination.'
+        ],
+        highlight: 'Ask yourself: What does Next Me believe that Old Me does not? How does Next Me show up in the specific situation where Old Me shrinks?',
+        loop: null,
+        ex: { q: 'Define your Next Me: (1) What they believe. (2) How they show up in one specific hard situation. (3) One regular action they take that Old Me avoids.', p: 'Next Me believes: ...\nWhen [difficult situation], Next Me: ...\nOne regular action Next Me takes: ...' },
+        kp: ['6–12 months forward is the right window — not 10 years', 'Next Me has specific beliefs, not just better feelings', 'Ground it: Where does Next Me show up that Old Me does not?']
+      },
+      {
+        id: 'l5', sidebar: 'Rewire the belief', step: 'Step 3: Shape It',
+        title: 'Rewire the belief — this is the hard part',
+        sub: 'Your brain feels safer with the old belief. Shaping It means choosing discomfort on purpose.',
+        body: [
+          'Your nervous system is going to fight you. The old belief feels safe — not because it is good, but because it is familiar. Familiar equals safe to your brain. Even when familiar is painful.',
+          'Shaping It means interrupting the old loop before it completes. Catching the belief in real-time and replacing the story mid-sentence. Building evidence — slowly, daily — that Next Me is real.',
+          'Three ways: (1) Catch the old story in real-time — name it, do not suppress it, interrupt it. (2) Act as Next Me in small, low-stakes situations first. (3) Log every Next Me moment. You are building a new case.'
+        ],
+        highlight: 'You are not trying to eliminate Old Me. You are building enough evidence for Next Me that the old belief stops feeling like the default.',
+        loop: null,
+        ex: { q: 'Pick one small situation in the next 48 hours where you can act as Next Me. What will you do?', p: 'The situation: ...\nWhat Old Me would normally do: ...\nWhat Next Me will do instead: ...\nWhat I will notice afterwards: ...' },
+        kp: ['Do not try to think positive — interrupt the old story instead', 'Small tests build real evidence faster than big leaps', 'Log every Next Me moment — your brain needs proof']
+      },
+      {
+        id: 'l6', sidebar: 'Test Next Me', step: 'Step 4: Live It',
+        title: 'Test your Next Me in real situations',
+        sub: 'This is where the framework stops being theory and starts being yours.',
+        body: [
+          'Living It is simple to explain and harder to do. You take your Next Me into the real world. You act as if the belief is already true. You collect proof.',
+          'The key phrase is "as if." Not fake it till you make it. Act as if — meaning you choose how Next Me would respond, even when Old Me is screaming otherwise.',
+          'Every time you choose Next Me in a real situation, you add one brick to a new identity foundation. One conversation. One decision. One moment where you did not shrink.'
+        ],
+        highlight: 'The goal of Living It is not perfection. It is accumulation. Enough Next Me moments, and Next Me stops being a choice — it becomes the default.',
+        loop: null,
+        ex: { q: 'After your first Next Me test: What happened? What did it feel like? What did you notice?', p: 'What I did: ...\nWhat it felt like in the moment: ...\nOld Me trying to pull back: ...\nNext Me showing up: ...' },
+        kp: ['Act as if — not pretend, but choose Next Me\'s response consciously', 'Collect proof. One brick at a time.', 'Wobbles are data, not failure. Track them instead of judging them.']
+      },
+      {
+        id: 'l7', sidebar: 'Protect the reset', step: 'Step 5: Protect It',
+        title: 'The difference between a slip and a spiral',
+        sub: 'You will slip. What you do next is what actually defines the reset.',
+        body: [
+          'Here is the part nobody talks about: the wobble. The moment, weeks or months in, where you fall back into the old belief, the old behaviour, the old loop.',
+          'This is not failure. This is the reset working — because you can now see the loop clearly enough to notice when you have fallen back in.',
+          'The danger is not the slip. The danger is what the slip means to you. "I have failed, I knew this would not work, I am back to being Old Me" — that is a spiral. "I slipped. I note it. I return." — that is protection.'
+        ],
+        highlight: 'A slip is a single event. A spiral is the story you tell about the slip. You can control the second one.',
+        loop: null,
+        ex: { q: 'Design your protection plan now, before you need it. What situations most trigger Old Me? What will you do the moment you slip?', p: 'My highest-risk trigger situations: ...\nEarly warning signs I am slipping: ...\nMy specific return plan when I slip: ...\nWho I will tell / what accountability looks like: ...' },
+        kp: ['Build the protection plan before you need it — not during the wobble', 'Slip = one moment. Spiral = the story you add. Do not add the story.', 'Name the trigger. Name the return plan. Make it automatic.']
+      },
+      {
+        id: 'cert', sidebar: 'Your certificate', step: 'Complete', type: 'cert'
+      }
+    ];
 
-</div>
+    const TOTAL_LESSONS = 8;
+    let cur = 0;
+    let emailOk = localStorage.getItem('uy_email') || '';
+    let userName = localStorage.getItem('uy_name') || '';
+    const done = new Set(JSON.parse(localStorage.getItem('uy_done') || '[]'));
 
-<script>
-const LESSONS = [
-  {
-    id:'ov', sidebar:'Course overview', step:'Overview', type:'overview'
-  },
-  {
-    id:'l1', sidebar:'Why habits fail', step:'Introduction',
-    title:'Why identity — not habits — is the real game',
-    sub:'Before we change what we do, we have to understand what has been running the show.',
-    body:[
-      'You have tried motivation. Habits. Routines. Accountability partners. Vision boards. And for a while — maybe even a long while — some of it worked. Then one hard week hit, and you were back to square one.',
-      'The problem was never your discipline. The problem was the identity underneath it. You can stack every habit in the world on top of a broken belief system — the foundation will crack. Every time.',
-      'This is the entire premise of the Unshakable You framework. We do not fix your habits. We fix what is running underneath them.'
-    ],
-    highlight:'Habits fail when the identity underneath stays broken. That is the pattern we are here to break.',
-    loop:null,
-    ex:{q:'What is one habit or goal you have tried more than once and failed to sustain?', p:'e.g. Waking up at 5am, going to the gym consistently, not procrastinating...'},
-    kp:['Identity shapes behaviour — not the other way around','Surface changes do not stick without root changes','Your old self will fight the new one — unless you are prepared']
-  },
-  {
-    id:'l2', sidebar:'Expose the loop', step:'Step 1: See It',
-    title:'Expose the identity that has been running your life',
-    sub:'You cannot change what you cannot see. This step is all about clarity.',
-    body:[
-      'Somewhere, quietly, you have a belief about who you are. It might sound like: "I am not disciplined." "I am not smart enough." "I am not the kind of person who succeeds at things like that."',
-      'You probably did not choose that belief. It was handed to you — by a teacher, a parent, a failure that happened once and became a story that happened forever.',
-      'That belief is running a loop. And that loop is your life right now.'
-    ],
-    highlight:null,
-    loop:['Your Belief','→','What You Focus On','→','What You Feel','→','What You Do','→','The Result','→','Proof the belief is "right"'],
-    ex:{q:'Complete this: "When it comes to the area I want to change, I secretly believe I am someone who..."', p:'e.g. I secretly believe I am someone who cannot follow through, who always needs external pressure...'},
-    kp:['The belief usually runs silently — spotting it is the whole step','Do not judge the belief yet. Just see it.','Your loop is not a character flaw. It is a learned pattern.']
-  },
-  {
-    id:'l3', sidebar:'Meet Old Me', step:'Step 2: Name It', gated:true,
-    title:'Meet Old Me — and decide what is actually true',
-    sub:'A lie loses half its power the moment you name it.',
-    body:[
-      'Now that you can see the belief, you can name it. Old Me is the version of you who has been operating from this belief. Old Me is not bad — Old Me was doing their best with a script they were handed. But Old Me\'s time is up.',
-      'Before you design Next Me, you need to separate two things your brain has confused for years: facts, and the meaning you gave them.',
-      'A fact: you failed a test once. The story you added: "I am not a smart person." The story is not the fact. And stories can be rewritten.'
-    ],
-    highlight:'The belief is not reality. It is an interpretation. And interpretations can be rewritten.',
-    loop:null,
-    ex:{q:'Name your Old Me belief in one sentence. Then write the original fact it came from — and the story you added on top.', p:'Old Me belief: I am someone who...\nOriginal fact: This happened...\nStory I added: Which means I am...'},
-    kp:['Old Me is your outdated operating system — not your enemy','Facts are neutral. Stories are chosen.','You chose the story unconsciously. Now choose it consciously.']
-  },
-  {
-    id:'l4', sidebar:'Design Next Me', step:'Step 2: Name It',
-    title:'Design your Next Me — no fantasy, just direction',
-    sub:'Next Me is not who you wish you were. It is who you are actually becoming.',
-    body:[
-      'Most people fail at identity change because they design a Next Me that is too far away. "I want to be fearless and confident in every room." That is not a Next Me. That is a Hollywood character.',
-      'Next Me is realistic. Next Me is 6–12 months from now. Next Me has specific beliefs, specific behaviours, and specific proof you are becoming them.',
-      'Next Me is a direction, not a destination.'
-    ],
-    highlight:'Ask yourself: What does Next Me believe that Old Me does not? How does Next Me show up in the specific situation where Old Me shrinks?',
-    loop:null,
-    ex:{q:'Define your Next Me: (1) What they believe. (2) How they show up in one specific hard situation. (3) One regular action they take that Old Me avoids.', p:'Next Me believes: ...\nWhen [difficult situation], Next Me: ...\nOne regular action Next Me takes: ...'},
-    kp:['6–12 months forward is the right window — not 10 years','Next Me has specific beliefs, not just better feelings','Ground it: Where does Next Me show up that Old Me does not?']
-  },
-  {
-    id:'l5', sidebar:'Rewire the belief', step:'Step 3: Shape It',
-    title:'Rewire the belief — this is the hard part',
-    sub:'Your brain feels safer with the old belief. Shaping It means choosing discomfort on purpose.',
-    body:[
-      'Your nervous system is going to fight you. The old belief feels safe — not because it is good, but because it is familiar. Familiar equals safe to your brain. Even when familiar is painful.',
-      'Shaping It means interrupting the old loop before it completes. Catching the belief in real-time and replacing the story mid-sentence. Building evidence — slowly, daily — that Next Me is real.',
-      'Three ways: (1) Catch the old story in real-time — name it, do not suppress it, interrupt it. (2) Act as Next Me in small, low-stakes situations first. (3) Log every Next Me moment. You are building a new case.'
-    ],
-    highlight:'You are not trying to eliminate Old Me. You are building enough evidence for Next Me that the old belief stops feeling like the default.',
-    loop:null,
-    ex:{q:'Pick one small situation in the next 48 hours where you can act as Next Me. What will you do?', p:'The situation: ...\nWhat Old Me would normally do: ...\nWhat Next Me will do instead: ...\nWhat I will notice afterwards: ...'},
-    kp:['Do not try to think positive — interrupt the old story instead','Small tests build real evidence faster than big leaps','Log every Next Me moment — your brain needs proof']
-  },
-  {
-    id:'l6', sidebar:'Test Next Me', step:'Step 4: Live It',
-    title:'Test your Next Me in real situations',
-    sub:'This is where the framework stops being theory and starts being yours.',
-    body:[
-      'Living It is simple to explain and harder to do. You take your Next Me into the real world. You act as if the belief is already true. You collect proof.',
-      'The key phrase is "as if." Not fake it till you make it. Act as if — meaning you choose how Next Me would respond, even when Old Me is screaming otherwise.',
-      'Every time you choose Next Me in a real situation, you add one brick to a new identity foundation. One conversation. One decision. One moment where you did not shrink.'
-    ],
-    highlight:'The goal of Living It is not perfection. It is accumulation. Enough Next Me moments, and Next Me stops being a choice — it becomes the default.',
-    loop:null,
-    ex:{q:'After your first Next Me test: What happened? What did it feel like? What did you notice?', p:'What I did: ...\nWhat it felt like in the moment: ...\nOld Me trying to pull back: ...\nNext Me showing up: ...'},
-    kp:['Act as if — not pretend, but choose Next Me\'s response consciously','Collect proof. One brick at a time.','Wobbles are data, not failure. Track them instead of judging them.']
-  },
-  {
-    id:'l7', sidebar:'Protect the reset', step:'Step 5: Protect It',
-    title:'The difference between a slip and a spiral',
-    sub:'You will slip. What you do next is what actually defines the reset.',
-    body:[
-      'Here is the part nobody talks about: the wobble. The moment, weeks or months in, where you fall back into the old belief, the old behaviour, the old loop.',
-      'This is not failure. This is the reset working — because you can now see the loop clearly enough to notice when you have fallen back in.',
-      'The danger is not the slip. The danger is what the slip means to you. "I have failed, I knew this would not work, I am back to being Old Me" — that is a spiral. "I slipped. I note it. I return." — that is protection.'
-    ],
-    highlight:'A slip is a single event. A spiral is the story you tell about the slip. You can control the second one.',
-    loop:null,
-    ex:{q:'Design your protection plan now, before you need it. What situations most trigger Old Me? What will you do the moment you slip?', p:'My highest-risk trigger situations: ...\nEarly warning signs I am slipping: ...\nMy specific return plan when I slip: ...\nWho I will tell / what accountability looks like: ...'},
-    kp:['Build the protection plan before you need it — not during the wobble','Slip = one moment. Spiral = the story you add. Do not add the story.','Name the trigger. Name the return plan. Make it automatic.']
-  },
-  {
-    id:'cert', sidebar:'Your certificate', step:'Complete', type:'cert'
-  }
-];
+    function save() { localStorage.setItem('uy_done', JSON.stringify([...done])); }
 
-const TOTAL_LESSONS = 8;
-let cur = 0;
-let emailOk = localStorage.getItem('uy_email') || '';
-let userName = localStorage.getItem('uy_name') || '';
-const done = new Set(JSON.parse(localStorage.getItem('uy_done') || '[]'));
+    function buildSidebar() {
+      const sb = document.getElementById('sidebar');
+      sb.innerHTML = '<div class="sidebar-label">Lessons</div>';
+      LESSONS.forEach((l, i) => {
+        const isDone = done.has(i);
+        const isActive = i === cur;
+        const isLocked = l.gated && !emailOk && i > cur && !isDone;
+        let cls = 'sb-btn';
+        if (isActive) cls += ' active';
+        if (isDone) cls += ' done';
+        if (isLocked) cls += ' locked';
+        const dotContent = isDone ? '✓' : i === 0 ? '★' : i === LESSONS.length - 1 ? '✦' : i;
+        const btn = document.createElement('button');
+        btn.className = cls;
+        btn.setAttribute('aria-label', l.sidebar + (isDone ? ' (completed)' : '') + (isLocked ? ' (locked)' : ''));
+        btn.innerHTML = `<div class="sb-dot">${dotContent}</div><div class="sb-text">${l.sidebar}${isLocked ? ' <span class="lock-icon">🔒</span>' : ''}</div>`;
+        btn.onclick = () => {
+          if (isLocked) return;
+          if (l.gated && !emailOk) { cur = i; showGate(); buildSidebar(); updateBars(); return; }
+          cur = i; render();
+        };
+        sb.appendChild(btn);
+      });
+    }
 
-function save() { localStorage.setItem('uy_done', JSON.stringify([...done])); }
-
-function buildSidebar() {
-  const sb = document.getElementById('sidebar');
-  sb.innerHTML = '<div class="sidebar-label">Lessons</div>';
-  LESSONS.forEach((l, i) => {
-    const isDone = done.has(i);
-    const isActive = i === cur;
-    const isLocked = l.gated && !emailOk && i > cur && !isDone;
-    let cls = 'sb-btn';
-    if (isActive) cls += ' active';
-    if (isDone) cls += ' done';
-    if (isLocked) cls += ' locked';
-    const dotContent = isDone ? '✓' : i === 0 ? '★' : i === LESSONS.length - 1 ? '✦' : i;
-    const btn = document.createElement('button');
-    btn.className = cls;
-    btn.setAttribute('aria-label', l.sidebar + (isDone ? ' (completed)' : '') + (isLocked ? ' (locked)' : ''));
-    btn.innerHTML = `<div class="sb-dot">${dotContent}</div><div class="sb-text">${l.sidebar}${isLocked ? ' <span class="lock-icon">🔒</span>' : ''}</div>`;
-    btn.onclick = () => {
-      if (isLocked) return;
-      if (l.gated && !emailOk) { cur = i; showGate(); buildSidebar(); updateBars(); return; }
-      cur = i; render();
-    };
-    sb.appendChild(btn);
-  });
-}
-
-function buildOverview() {
-  return `<div class="overview">
+    function buildOverview() {
+      return `<div class="overview">
     <div class="ov-hero">
       <div class="ov-eyebrow">Free mini-course · A.B. Mustikin</div>
       <div class="ov-title">The 5-Step Identity Reset</div>
@@ -795,26 +1167,26 @@ function buildOverview() {
     </div>
     <div class="ov-steps">
       ${[
-        ['See It','Uncover the belief that has been running your life. Map your identity loop.'],
-        ['Name It','Meet Old Me. Separate facts from the stories you added. Design your Next Me.'],
-        ['Shape It','Interrupt the old loop. Build daily evidence that Next Me is real.'],
-        ['Live It','Take your Next Me into real situations. Collect proof. One brick at a time.'],
-        ['Protect It','Build your wobble plan before you need it. Know a slip from a spiral.']
-      ].map(([t,d],i) => `<div class="ov-step"><div class="ov-num">${i+1}</div><div><div class="ov-step-t">${t}</div><div class="ov-step-d">${d}</div></div></div>`).join('')}
+          ['See It', 'Uncover the belief that has been running your life. Map your identity loop.'],
+          ['Name It', 'Meet Old Me. Separate facts from the stories you added. Design your Next Me.'],
+          ['Shape It', 'Interrupt the old loop. Build daily evidence that Next Me is real.'],
+          ['Live It', 'Take your Next Me into real situations. Collect proof. One brick at a time.'],
+          ['Protect It', 'Build your wobble plan before you need it. Know a slip from a spiral.']
+        ].map(([t, d], i) => `<div class="ov-step"><div class="ov-num">${i + 1}</div><div><div class="ov-step-t">${t}</div><div class="ov-step-d">${d}</div></div></div>`).join('')}
     </div>
     <div class="ov-author">
       <div class="ov-avatar">A</div>
       <div>
         <div class="ov-author-name">A.B. Mustikin</div>
-        <div class="ov-author-role">Author, Unshakable You · Identity Reset Coach</div>
+        <div class="ov-author-role">Author, Unshakable You · Creator of 5 Step Identity Reset Method</div>
       </div>
     </div>
     <button class="btn-start" onclick="go(1)">Begin Lesson 1 →</button>
   </div>`;
-}
+    }
 
-function buildGate() {
-  return `<div class="gate">
+    function buildGate() {
+      return `<div class="gate">
     <div class="gate-icon">
       <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     </div>
@@ -830,36 +1202,36 @@ function buildGate() {
       <div class="gate-note">No spam. Used only to send your course progress and certificate.</div>
     </div>
   </div>`;
-}
+    }
 
-function submitGate() {
-  const n = document.getElementById('gname').value.trim();
-  const e = document.getElementById('gemail').value.trim();
-  const err = document.getElementById('gate-err');
-  if (!n || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) {
-    err.style.display = 'block'; return;
-  }
-  emailOk = e; userName = n;
-  localStorage.setItem('uy_email', e);
-  localStorage.setItem('uy_name', n);
-  render();
-}
+    function submitGate() {
+      const n = document.getElementById('gname').value.trim();
+      const e = document.getElementById('gemail').value.trim();
+      const err = document.getElementById('gate-err');
+      if (!n || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) {
+        err.style.display = 'block'; return;
+      }
+      emailOk = e; userName = n;
+      localStorage.setItem('uy_email', e);
+      localStorage.setItem('uy_name', n);
+      render();
+    }
 
-function buildCert() {
-  const name = userName || 'You';
-  const today = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-  return `<div class="cert">
+    function buildCert() {
+      const name = userName || 'You';
+      const today = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+      return `<div class="cert">
     <div class="cert-top">
       <div class="cert-seal">✦</div>
       <div class="cert-eyebrow">Certificate of completion</div>
       <div class="cert-title">Unshakable You — Identity Reset Mini-Course</div>
       <div class="cert-label">This certifies that</div>
       <div class="cert-name">${name}</div>
-      <div class="cert-book">has completed all 8 lessons of the 5-Step Identity Reset framework</div>
+      <div class="cert-book">has completed all 8 lessons of the 5-Step Identity Reset Method</div>
     </div>
     <div class="cert-body">
       <div class="cert-steps">
-        ${['See It','Name It','Shape It','Live It','Protect It'].map((s,i)=>`<div class="cert-step"><div class="cs-n">Step ${i+1}</div><div class="cs-t">${s}</div></div>`).join('')}
+        ${['See It', 'Name It', 'Shape It', 'Live It', 'Protect It'].map((s, i) => `<div class="cert-step"><div class="cs-n">Step ${i + 1}</div><div class="cs-t">${s}</div></div>`).join('')}
       </div>
       <div class="cert-msg">"You have seen the loop, named Old Me, designed Next Me, and built your protection plan. This is not the end of the reset — it is the beginning of it."<br><br>— A.B. Mustikin</div>
       <div class="cert-ctas">
@@ -875,36 +1247,36 @@ function buildCert() {
       </div>
     </div>
   </div>`;
-}
+    }
 
-function shareTwitter() {
-  const text = encodeURIComponent('Just completed the free Unshakable You Identity Reset mini-course by @ABMustikin. The 5-step framework for changing what\'s actually running your life. Highly recommend.');
-  window.open('https://twitter.com/intent/tweet?text=' + text, '_blank');
-}
-function shareLinkedIn() {
-  const url = encodeURIComponent(window.location.href);
-  window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + url, '_blank');
-}
-function copyLink() {
-  navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!')).catch(() => alert(window.location.href));
-}
+    function shareTwitter() {
+      const text = encodeURIComponent('Just completed the free Unshakable You Identity Reset mini-course by @ABMustikin. The 5-step Method for changing what\'s actually running your life. Highly recommend.');
+      window.open('https://twitter.com/intent/tweet?text=' + text, '_blank');
+    }
+    function shareLinkedIn() {
+      const url = encodeURIComponent(window.location.href);
+      window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + url, '_blank');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => alert('Link copied!')).catch(() => alert(window.location.href));
+    }
 
-function buildLesson(l) {
-  const idx = cur;
-  let loopHTML = '';
-  if (l.loop) {
-    loopHTML = `<div class="loop-wrap">${l.loop.map(x => x === '→' ? `<span class="loop-arrow">→</span>` : `<span class="loop-pill">${x}</span>`).join('')}</div>`;
-  }
-  let exHTML = '';
-  if (l.ex) {
-    const saved = localStorage.getItem('uy_ex_' + l.id) || '';
-    exHTML = `<div class="exercise-box">
+    function buildLesson(l) {
+      const idx = cur;
+      let loopHTML = '';
+      if (l.loop) {
+        loopHTML = `<div class="loop-wrap">${l.loop.map(x => x === '→' ? `<span class="loop-arrow">→</span>` : `<span class="loop-pill">${x}</span>`).join('')}</div>`;
+      }
+      let exHTML = '';
+      if (l.ex) {
+        const saved = localStorage.getItem('uy_ex_' + l.id) || '';
+        exHTML = `<div class="exercise-box">
       <div class="exercise-label">Reflection exercise</div>
       <div class="exercise-q">${l.ex.q}</div>
       <textarea id="exinp" rows="4" placeholder="${l.ex.p}">${saved}</textarea>
     </div>`;
-  }
-  return `
+      }
+      return `
     <div class="lesson-meta">
       <span class="step-pill">${l.step}</span>
       <span class="lesson-num">Lesson ${idx} of ${TOTAL_LESSONS}</span>
@@ -922,77 +1294,78 @@ function buildLesson(l) {
       ${l.kp.map(k => `<div class="key-point"><div class="kp-dot"></div><span>${k}</span></div>`).join('')}
     </div>
   `;
-}
-
-function showGate() {
-  document.getElementById('content').innerHTML = buildGate();
-  document.getElementById('btnPrev').style.visibility = 'visible';
-  document.getElementById('btnNext').style.display = 'none';
-  document.getElementById('centerInfo').textContent = 'Free to unlock — enter your details above';
-}
-
-function updateBars() {
-  const lessonIdx = cur === 0 ? 0 : LESSONS[cur].id === 'cert' ? TOTAL_LESSONS : cur;
-  const pct = Math.round((lessonIdx / TOTAL_LESSONS) * 100);
-  document.getElementById('pbar').style.width = pct + '%';
-  document.getElementById('plabel').textContent =
-    cur === 0 ? 'Overview' :
-    LESSONS[cur].id === 'cert' ? 'Complete!' :
-    cur + ' / ' + TOTAL_LESSONS;
-}
-
-function render() {
-  const l = LESSONS[cur];
-  const content = document.getElementById('content');
-  content.scrollTop = 0;
-  const prev = document.getElementById('btnPrev');
-  const next = document.getElementById('btnNext');
-  const ci = document.getElementById('centerInfo');
-  next.style.display = '';
-  ci.textContent = '';
-
-  if (l.type === 'overview') {
-    content.innerHTML = buildOverview();
-    prev.style.visibility = 'hidden';
-    next.textContent = 'Begin Lesson 1 →';
-    next.className = 'btn-nav btn-next';
-  } else if (l.type === 'cert') {
-    content.innerHTML = buildCert();
-    prev.style.visibility = 'visible';
-    next.style.display = 'none';
-    ci.textContent = '🎉 Course complete';
-  } else {
-    if (l.gated && !emailOk) { showGate(); buildSidebar(); updateBars(); return; }
-    content.innerHTML = buildLesson(l);
-    prev.style.visibility = cur <= 1 ? 'hidden' : 'visible';
-    const isLast = cur === LESSONS.length - 2;
-    next.textContent = isLast ? 'Finish & get certificate →' : 'Next →';
-    next.className = isLast ? 'btn-nav btn-finish' : 'btn-nav btn-next';
-    const inp = document.getElementById('exinp');
-    if (inp) {
-      inp.addEventListener('input', () => localStorage.setItem('uy_ex_' + l.id, inp.value));
     }
-  }
 
-  buildSidebar();
-  updateBars();
-}
+    function showGate() {
+      document.getElementById('content').innerHTML = buildGate();
+      document.getElementById('btnPrev').style.visibility = 'visible';
+      document.getElementById('btnNext').style.display = 'none';
+      document.getElementById('centerInfo').textContent = 'Free to unlock — enter your details above';
+    }
 
-function go(dir) {
-  if (dir === 1 && cur < LESSONS.length - 1) {
-    done.add(cur); save();
-    cur++;
-    const l = LESSONS[cur];
-    if (l.gated && !emailOk) { showGate(); buildSidebar(); updateBars(); return; }
+    function updateBars() {
+      const lessonIdx = cur === 0 ? 0 : LESSONS[cur].id === 'cert' ? TOTAL_LESSONS : cur;
+      const pct = Math.round((lessonIdx / TOTAL_LESSONS) * 100);
+      document.getElementById('pbar').style.width = pct + '%';
+      document.getElementById('plabel').textContent =
+        cur === 0 ? 'Overview' :
+          LESSONS[cur].id === 'cert' ? 'Complete!' :
+            cur + ' / ' + TOTAL_LESSONS;
+    }
+
+    function render() {
+      const l = LESSONS[cur];
+      const content = document.getElementById('content');
+      content.scrollTop = 0;
+      const prev = document.getElementById('btnPrev');
+      const next = document.getElementById('btnNext');
+      const ci = document.getElementById('centerInfo');
+      next.style.display = '';
+      ci.textContent = '';
+
+      if (l.type === 'overview') {
+        content.innerHTML = buildOverview();
+        prev.style.visibility = 'hidden';
+        next.textContent = 'Begin Lesson 1 →';
+        next.className = 'btn-nav btn-next';
+      } else if (l.type === 'cert') {
+        content.innerHTML = buildCert();
+        prev.style.visibility = 'visible';
+        next.style.display = 'none';
+        ci.textContent = '🎉 Course complete';
+      } else {
+        if (l.gated && !emailOk) { showGate(); buildSidebar(); updateBars(); return; }
+        content.innerHTML = buildLesson(l);
+        prev.style.visibility = cur <= 1 ? 'hidden' : 'visible';
+        const isLast = cur === LESSONS.length - 2;
+        next.textContent = isLast ? 'Finish & get certificate →' : 'Next →';
+        next.className = isLast ? 'btn-nav btn-finish' : 'btn-nav btn-next';
+        const inp = document.getElementById('exinp');
+        if (inp) {
+          inp.addEventListener('input', () => localStorage.setItem('uy_ex_' + l.id, inp.value));
+        }
+      }
+
+      buildSidebar();
+      updateBars();
+    }
+
+    function go(dir) {
+      if (dir === 1 && cur < LESSONS.length - 1) {
+        done.add(cur); save();
+        cur++;
+        const l = LESSONS[cur];
+        if (l.gated && !emailOk) { showGate(); buildSidebar(); updateBars(); return; }
+        render();
+      } else if (dir === -1 && cur > 0) {
+        cur--;
+        render();
+      }
+    }
+
     render();
-  } else if (dir === -1 && cur > 0) {
-    cur--;
-    render();
-  }
-}
-
-render();
-</script>
+  </script>
 
 </body>
+
 </html>
