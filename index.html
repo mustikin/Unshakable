@@ -169,6 +169,16 @@
 
     .mc-note { font-size: 11px; color: var(--text-faint); margin-top: 2px; }
 
+    /* CORRECT/INCORRECT HIGHLIGHTS */
+    .mc-option.correct { border-color: var(--success) !important; background: rgba(46, 125, 50, 0.08) !important; color: var(--text) !important; }
+    .mc-option.incorrect { border-color: var(--danger) !important; background: rgba(192, 57, 43, 0.08) !important; }
+    .explanation-box { display: none; margin-top: 10px; padding: 12px 14px; background: var(--surface2); border-left: 3px solid var(--gold); border-radius: 4px; font-size: 13px; color: var(--text-mid); line-height: 1.6; }
+    .explanation-box.show { display: block; }
+    .btn-check-wrap { margin-top: 16px; display: flex; justify-content: flex-start; }
+    .btn-check-ans { padding: 8px 20px; font-size: 12px; font-weight: 500; color: var(--gold-text); background: transparent; border: 1.5px solid var(--gold-border); border-radius: var(--radius-sm); cursor: pointer; transition: all 0.15s; }
+    .btn-check-ans:hover { background: var(--gold-dim); border-color: var(--gold); }
+    .btn-check-ans:disabled { opacity: 0.5; cursor: not-allowed; }
+
     /* VALIDATION MESSAGE */
     .val-msg { display: none; font-size: 12px; color: var(--danger); margin-top: 4px; padding: 8px 12px; background: rgba(192,57,43,0.07); border-radius: var(--radius-sm); border-left: 2px solid var(--danger); }
     .val-msg.show { display: block; }
@@ -354,6 +364,8 @@ const LESSONS = [
           q: 'Which of these best describes why habit change tends to fail?',
           note: 'Choose one',
           multi: false,
+          correct: 1,
+          explanation: 'Habit change fails when the underlying identity remains the same. You can change what you do temporarily, but eventually, you will revert to behaviors that feel "true" to who you believe you are.',
           options: [
             'People don\'t try hard enough or stay disciplined',
             'The identity underneath the habit stays unchanged',
@@ -391,6 +403,8 @@ const LESSONS = [
           q: 'Which stage of the identity loop is usually the easiest place to intervene?',
           note: 'Choose one',
           multi: false,
+          correct: 1,
+          explanation: 'While the belief is the root, the "action" or the "doing" is the most practical place to intervene and provide new evidence to your brain that you are changing.',
           options: [
             'The belief itself — challenge it directly',
             'The action — do something different before the result forms',
@@ -428,6 +442,8 @@ const LESSONS = [
           q: 'What is the key distinction between a "fact" and a "story" in the context of identity beliefs?',
           note: 'Choose one',
           multi: false,
+          correct: 1,
+          explanation: 'Facts are objective events (e.g., "I failed a test"). Stories are the subjective interpretations we overlay (e.g., "I am not smart"). Separating them is the key to renaming your identity.',
           options: [
             'Facts are positive, stories are negative',
             'Facts are what happened; stories are the meaning you assigned to what happened',
@@ -441,6 +457,8 @@ const LESSONS = [
           q: 'Which of these best describes "Old Me"?',
           note: 'Select all that apply',
           multi: true,
+          correct: [0, 1, 3],
+          explanation: 'Old Me is an outdated operating system—a version of you that was doing its best with limited scripts. It is not a character flaw or proof that you are broken; it is simply a version you have outgrown.',
           options: [
             'An outdated operating system, not your enemy',
             'A version of you doing its best with inherited scripts',
@@ -478,6 +496,8 @@ const LESSONS = [
           q: 'What is the right timeframe for designing your "Next Me"?',
           note: 'Choose one',
           multi: false,
+          correct: 1,
+          explanation: 'The 6–12 month window is realistic and directional. It is far enough to allow meaningful change, but close enough to stay grounded in reality rather than fantasy.',
           options: [
             '5–10 years — think big and long-term',
             '6–12 months — realistic and directional',
@@ -515,6 +535,8 @@ const LESSONS = [
           q: 'Why does the brain resist identity change even when the old identity causes pain?',
           note: 'Choose one',
           multi: false,
+          correct: 1,
+          explanation: 'The brain prioritizes the familiar over the "good." Even if a belief is painful, it feels safer because it is known. Change feels like a threat to the nervous system\'s safety.',
           options: [
             'Because people are fundamentally lazy',
             'Because the familiar feels safe, even when it\'s harmful',
@@ -528,6 +550,8 @@ const LESSONS = [
           q: 'Which approaches are part of Shaping It? (Select all that apply)',
           note: 'Select all that apply',
           multi: true,
+          correct: [0, 1, 3],
+          explanation: 'Shaping It involves real-time awareness (catching the story), experimentation (acting as Next Me), and reinforcement (logging evidence). Waiting until you feel "ready" is usually a trap of Old Me.',
           options: [
             'Catch and name the old story in real-time',
             'Act as Next Me in small, low-stakes situations',
@@ -565,6 +589,8 @@ const LESSONS = [
           q: 'What does "act as if" mean in the context of Living It?',
           note: 'Choose one',
           multi: false,
+          correct: 1,
+          explanation: '"Acting as if" is a conscious choice to align with your future identity even when your old one is still resisting. It is about cumulative evidence, not pretending to be perfect.',
           options: [
             'Pretend to be someone you are not until others believe it',
             'Consciously choose Next Me\'s response even when Old Me resists',
@@ -602,6 +628,8 @@ const LESSONS = [
           q: 'What is the difference between a slip and a spiral?',
           note: 'Choose one',
           multi: false,
+          correct: 1,
+          explanation: 'A slip is just a moment. A spiral is the story of failure you tell yourself about that moment. Controlling the story stops the slip from becoming a regression.',
           options: [
             'A slip is minor; a spiral is a complete failure',
             'A slip is a single event; a spiral is the destructive story you add to it',
@@ -615,6 +643,8 @@ const LESSONS = [
           q: 'What should your protection plan include? (Select all that apply)',
           note: 'Select all that apply',
           multi: true,
+          correct: [0, 1, 3],
+          explanation: 'A realistic protection plan focuses on triggers, early warning signs, and a concrete path back. Promises of "never slipping" are brittle and lead to spirals when reality hits.',
           options: [
             'Your highest-risk trigger situations',
             'Early warning signs that Old Me is taking over',
@@ -652,6 +682,8 @@ const LESSONS = [
           q: 'What is the single most important thing that makes identity change stick long-term?',
           note: 'Choose one',
           multi: false,
+          correct: 1,
+          explanation: 'Identity change is an accumulation of daily votes. There is no finish line—only the consistent decision to choose your new direction over your old patterns.',
           options: [
             'Finishing a course like this one',
             'The daily decision to keep choosing Next Me over Old Me',
@@ -665,6 +697,8 @@ const LESSONS = [
           q: 'Which of these best describes the Unshakable You framework? (Select all that apply)',
           note: 'Select all that apply',
           multi: true,
+          correct: [0, 1, 2, 3, 4],
+          explanation: 'The Unshakable You framework is a complete cycle: See It (expose), Name It (separate), Shape It (rewire), Live It (test), and Protect It (defence).',
           options: [
             'See It — expose the belief running your life',
             'Name It — separate facts from the stories you added',
@@ -764,6 +798,8 @@ function checkCanProceed(l) {
     } else if (q.type === 'multichoice') {
       const selected = document.querySelectorAll('.mc-option.selected[data-qid="' + q.id + '"]');
       if (selected.length === 0) return false;
+      // Requirement: Check answer must be clicked
+      if (localStorage.getItem('uy_checked_' + q.id) !== 'true') return false;
     }
   }
   return true;
@@ -967,14 +1003,24 @@ function buildExercise(l) {
         <textarea id="ex_${q.id}" rows="4" placeholder="${q.placeholder || ''}">${saved}</textarea>`;
     } else if (q.type === 'multichoice') {
       const savedRaw = localStorage.getItem('uy_mc_' + q.id) || '[]';
+      const isChecked = localStorage.getItem('uy_checked_' + q.id) === 'true';
       let saved = [];
       try { saved = JSON.parse(savedRaw); } catch(e) {}
+      
       html += `<div class="exercise-q">${q.q}</div>`;
       if (q.note) html += `<div class="mc-note">${q.note}</div>`;
-      html += `<div class="mc-options${q.multi ? ' mc-multi' : ''}">`;
+      html += `<div class="mc-options${q.multi ? ' mc-multi' : ''}" id="mc_opts_${q.id}">`;
+      
       q.options.forEach((opt, oi) => {
-        const isSelected = saved.includes(oi);
-        html += `<div class="mc-option${isSelected ? ' selected' : ''}" data-qid="${q.id}" data-oi="${oi}" onclick="toggleMC(this, '${q.id}', ${oi}, ${q.multi})">
+        let cls = 'mc-option';
+        if (saved.includes(oi)) cls += ' selected';
+        if (isChecked) {
+          const isCorrect = Array.isArray(q.correct) ? q.correct.includes(oi) : q.correct === oi;
+          if (isCorrect) cls += ' correct';
+          else if (saved.includes(oi)) cls += ' incorrect';
+        }
+        
+        html += `<div class="${cls}" data-qid="${q.id}" data-oi="${oi}" onclick="toggleMC(this, '${q.id}', ${oi}, ${q.multi})">
           <div class="mc-check">
             <div class="mc-check-inner"></div>
             <svg class="mc-check-tick" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -982,7 +1028,16 @@ function buildExercise(l) {
           <span>${opt}</span>
         </div>`;
       });
-      html += `</div><div class="val-msg" id="mc_err_${q.id}">Please select an option to continue.</div>`;
+      
+      html += `</div>
+        <div class="explanation-box ${isChecked ? 'show' : ''}" id="expl_${q.id}">
+          <div style="font-weight: 500; margin-bottom: 4px; color: var(--gold-text);">Explanation:</div>
+          ${q.explanation}
+        </div>
+        <div class="val-msg" id="mc_err_${q.id}">Please select an option to continue.</div>
+        <div class="btn-check-wrap">
+          <button class="btn-check-ans" id="btn_check_${q.id}" onclick="checkAnswer('${q.id}')" ${isChecked ? 'style="display:none"' : ''}>Check answer</button>
+        </div>`;
     }
   });
 
@@ -990,7 +1045,57 @@ function buildExercise(l) {
   return html;
 }
 
+function checkAnswer(qid) {
+  const selected = [...document.querySelectorAll(`.mc-option.selected[data-qid="${qid}"]`)].map(o => parseInt(o.dataset.oi));
+  if (selected.length === 0) {
+    const errEl = document.getElementById('mc_err_' + qid);
+    if (errEl) errEl.classList.add('show');
+    return;
+  }
+  
+  localStorage.setItem('uy_checked_' + qid, 'true');
+  
+  // Find question data
+  let qData = null;
+  LESSONS.forEach(l => {
+    if (l.ex && l.ex.questions) {
+      const found = l.ex.questions.find(q => q.id === qid);
+      if (found) qData = found;
+    }
+  });
+  
+  if (!qData) return;
+  
+  // Highlight
+  document.querySelectorAll(`.mc-option[data-qid="${qid}"]`).forEach(o => {
+    const oi = parseInt(o.dataset.oi);
+    const isCorrect = Array.isArray(qData.correct) ? qData.correct.includes(oi) : qData.correct === oi;
+    if (isCorrect) o.classList.add('correct');
+    else if (o.classList.contains('selected')) o.classList.add('incorrect');
+  });
+  
+  // Show explanation
+  const expl = document.getElementById('expl_' + qid);
+  if (expl) expl.classList.add('show');
+  
+  // Hide button
+  const btn = document.getElementById('btn_check_' + qid);
+  if (btn) btn.style.display = 'none';
+  
+  updateNextBtn();
+}
+
 function toggleMC(el, qid, oi, multi) {
+  // If already checked, ignore clicks or reset checked state? 
+  // User says "Check answer" before moving on. Usually it's better to allow changes but reset highlights.
+  const isChecked = localStorage.getItem('uy_checked_' + qid) === 'true';
+  if (isChecked) {
+    localStorage.removeItem('uy_checked_' + qid);
+    document.getElementById('btn_check_' + qid).style.display = 'block';
+    document.getElementById('expl_' + qid).classList.remove('show');
+    document.querySelectorAll(`.mc-option[data-qid="${qid}"]`).forEach(o => o.classList.remove('correct', 'incorrect'));
+  }
+
   if (multi) {
     el.classList.toggle('selected');
   } else {
