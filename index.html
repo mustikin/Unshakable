@@ -887,15 +887,14 @@ function submitGate() {
 
 async function sendEmailToBackend(name, email) {
   try {
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('message', `Course: Unshakable You - Identity Reset Mini-Course\nTimestamp: ${new Date().toISOString()}`);
+    
     const response = await fetch(EMAIL_COLLECTION_ENDPOINT, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        course: 'Unshakable You - Identity Reset Mini-Course',
-        timestamp: new Date().toISOString()
-      })
+      body: formData
     });
     
     if (!response.ok) {
@@ -905,7 +904,6 @@ async function sendEmailToBackend(name, email) {
     }
   } catch (err) {
     console.warn('Error sending email to backend:', err);
-    // Fail silently — don't block course progression if backend is down
   }
 }
 
