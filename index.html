@@ -335,7 +335,7 @@ const LESSONS = [
     id: 'ov', sidebar: 'Course overview', step: 'Overview', type: 'overview'
   },
   {
-    id: 'l1', sidebar: 'Why habits fail', step: 'Introduction',
+    id: 'l1', sidebar: 'Pillar 1 — Why habits fail', step: 'Introduction',
     title: 'Why identity — not habits — is the real game',
     sub: 'Before we change what we do, we have to understand what has been running the show.',
     body: [
@@ -372,7 +372,7 @@ const LESSONS = [
     kp: ['Identity shapes behaviour — not the other way around', 'Surface changes do not stick without root changes', 'Your old self will fight the new one — unless you are prepared']
   },
   {
-    id: 'l2', sidebar: 'Expose the loop', step: 'Step 1: See It',
+    id: 'l2', sidebar: 'Pillar 2 — Expose the loop', step: 'Step 1: See It',
     title: 'Expose the identity that has been running your life',
     sub: 'You cannot change what you cannot see. This step is all about clarity.',
     body: [
@@ -409,7 +409,7 @@ const LESSONS = [
     kp: ['The belief usually runs silently — spotting it is the whole step', 'Do not judge the belief yet. Just see it.', 'Your loop is not a character flaw. It is a learned pattern.']
   },
   {
-    id: 'l3', sidebar: 'Meet Old Me', step: 'Step 2: Name It', gated: true,
+    id: 'l3', sidebar: 'Pillar 3 — Meet Old Me', step: 'Step 2: Name It', gated: true,
     title: 'Meet Old Me — and decide what is actually true',
     sub: 'A lie loses half its power the moment you name it.',
     body: [
@@ -459,7 +459,7 @@ const LESSONS = [
     kp: ['Old Me is your outdated operating system — not your enemy', 'Facts are neutral. Stories are chosen.', 'You chose the story unconsciously. Now choose it consciously.']
   },
   {
-    id: 'l4', sidebar: 'Design Next Me', step: 'Step 2: Name It', gated: true,
+    id: 'l4', sidebar: 'Pillar 4 — Design Next Me', step: 'Step 2: Name It', gated: true,
     title: 'Design your Next Me — no fantasy, just direction',
     sub: 'Next Me is not who you wish you were. It is who you are actually becoming.',
     body: [
@@ -496,7 +496,7 @@ const LESSONS = [
     kp: ['6–12 months forward is the right window — not 10 years', 'Next Me has specific beliefs, not just better feelings', 'Ground it: Where does Next Me show up that Old Me does not?']
   },
   {
-    id: 'l5', sidebar: 'Rewire the belief', step: 'Step 3: Shape It', gated: true,
+    id: 'l5', sidebar: 'Pillar 5 — Rewire the belief', step: 'Step 3: Shape It', gated: true,
     title: 'Rewire the belief — this is the hard part',
     sub: 'Your brain feels safer with the old belief. Shaping It means choosing discomfort on purpose.',
     body: [
@@ -546,7 +546,7 @@ const LESSONS = [
     kp: ['Do not try to think positive — interrupt the old story instead', 'Small tests build real evidence faster than big leaps', 'Log every Next Me moment — your brain needs proof']
   },
   {
-    id: 'l6', sidebar: 'Test Next Me', step: 'Step 4: Live It', gated: true,
+    id: 'l6', sidebar: 'Pillar 6 — Test Next Me', step: 'Step 4: Live It', gated: true,
     title: 'Test your Next Me in real situations',
     sub: 'This is where the framework stops being theory and starts being yours.',
     body: [
@@ -583,7 +583,7 @@ const LESSONS = [
     kp: ['Act as if — not pretend, but choose Next Me\'s response consciously', 'Collect proof. One brick at a time.', 'Wobbles are data, not failure. Track them instead of judging them.']
   },
   {
-    id: 'l7', sidebar: 'Protect the reset', step: 'Step 5: Protect It', gated: true,
+    id: 'l7', sidebar: 'Pillar 7 — Protect the reset', step: 'Step 5: Protect It', gated: true,
     title: 'The difference between a slip and a spiral',
     sub: 'You will slip. What you do next is what actually defines the reset.',
     body: [
@@ -633,7 +633,7 @@ const LESSONS = [
     kp: ['Build the protection plan before you need it — not during the wobble', 'Slip = one moment. Spiral = the story you add. Do not add the story.', 'Name the trigger. Name the return plan. Make it automatic.']
   },
   {
-    id: 'l8', sidebar: 'You are already Next Me', step: 'The Commitment', gated: true,
+    id: 'l8', sidebar: 'Pillar 8 — You are already Next Me', step: 'The Commitment', gated: true,
     title: 'You are already becoming Next Me',
     sub: 'The reset is not a destination. It is a decision you make every day.',
     body: [
@@ -782,11 +782,16 @@ function updateNextBtn() {
 // ── SIDEBAR ──
 function buildSidebar() {
   const sb = document.getElementById('sidebar');
-  sb.innerHTML = '<div class="sidebar-label">Lessons</div>';
+  sb.innerHTML = '<div class="sidebar-label">Pillars</div>';
+  const allPillarsDone = [1,2,3,4,5,6,7,8].every(i => done.has(i));
   LESSONS.forEach((l, i) => {
     const isDone = done.has(i);
     const isActive = i === cur;
-    const isLocked = l.gated && !emailOk && i > cur && !isDone;
+    // Cert locked until all 8 pillars complete
+    const isCertLocked = l.id === 'cert' && !allPillarsDone;
+    // Pillars 3-8 locked until email
+    const isEmailLocked = l.gated && !emailOk && i > cur && !isDone && l.id !== 'cert';
+    const isLocked = isCertLocked || isEmailLocked;
     let cls = 'sb-btn';
     if (isActive) cls += ' active';
     if (isDone) cls += ' done';
@@ -812,9 +817,10 @@ function buildOverview() {
       <div class="ov-eyebrow">Free mini-course · A.B. Mustikin</div>
       <div class="ov-title">The 5-Step Identity Reset</div>
       <div class="ov-desc">A no-fluff walkthrough of the exact framework from the book <em>Unshakable You</em>. Free. Practical. Yours to keep.</div>
+      <div class="ov-desc" style="margin-top: 6px; font-size: 12px; line-height: 1.7; max-width: 440px;">Most self-improvement fails because it targets your habits — not the identity underneath them. This 8-pillar mini-course walks you through the 5-Step Identity Reset Method: a practical framework for exposing the belief that's been running your life, designing who you're actually becoming (Next Me), and building the protection plan that stops a bad week from undoing months of progress. No fluff. No vision boards. Just the real work.</div>
     </div>
     <div class="ov-stats">
-      <div class="ov-stat"><div class="ov-stat-n">8</div><div class="ov-stat-l">Lessons</div></div>
+      <div class="ov-stat"><div class="ov-stat-n">8</div><div class="ov-stat-l">Pillars</div></div>
       <div class="ov-stat"><div class="ov-stat-n">~30</div><div class="ov-stat-l">Minutes</div></div>
       <div class="ov-stat"><div class="ov-stat-n">5</div><div class="ov-stat-l">Framework steps</div></div>
     </div>
@@ -834,7 +840,7 @@ function buildOverview() {
         <div class="ov-author-role">Author, Unshakable You · Creator of 5 Step Identity Reset Method</div>
       </div>
     </div>
-    <button class="btn-start" onclick="go(1)">Begin Lesson 1 →</button>
+    <button class="btn-start" onclick="go(1)">Begin Pillar 1 →</button>
   </div>`;
 }
 
@@ -844,7 +850,7 @@ function buildGate() {
     <div class="gate-icon">
       <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     </div>
-    <h2>Lessons 3–8 are free — just drop your details below</h2>
+    <h2>Pillars 3–8 are free — just drop your details below</h2>
     <p>Enter your name and email to unlock the rest of the course. You will also receive a copy of your reflection answers and your completion certificate.</p>
     <div class="gate-form">
       <input class="gate-input" type="text" id="gname" placeholder="Your first name" autocomplete="given-name"/>
@@ -914,11 +920,11 @@ function buildCert() {
       <div class="cert-title">Unshakable You — Identity Reset Mini-Course</div>
       <div class="cert-label">This certifies that</div>
       <div class="cert-name">${name}</div>
-      <div class="cert-book">has completed all 8 lessons of the 5-Step Identity Reset Method</div>
+      <div class="cert-book">has completed all 8 pillars of the 5-Step Identity Reset Method</div>
     </div>
     <div class="cert-body">
       <div class="cert-steps">
-        ${['See It','Name It','Shape It','Live It','Protect It'].map((s,i)=>`<div class="cert-step"><div class="cs-n">Step ${i+1}</div><div class="cs-t">${s}</div></div>`).join('')}
+        ${['See It','Name It','Shape It','Live It','Protect It'].map((s,i)=>`<div class="cert-step"><div class="cs-n">Pillar ${i+1}</div><div class="cs-t">${s}</div></div>`).join('')}
       </div>
       <div class="cert-msg">"You have seen the loop, named Old Me, designed Next Me, and built your protection plan. This is not the end of the reset — it is the beginning of it."<br><br>— A.B. Mustikin</div>
       <div class="cert-ctas">
@@ -1013,7 +1019,7 @@ function buildLesson(l) {
   return `
     <div class="lesson-meta">
       <span class="step-pill">${l.step}</span>
-      <span class="lesson-num">Lesson ${idx} of ${TOTAL_LESSONS}</span>
+      <span class="lesson-num">Pillar ${idx} of ${TOTAL_LESSONS}</span>
     </div>
     <div class="lesson-h1">${l.title}</div>
     <div class="lesson-sub">${l.sub}</div>
@@ -1061,10 +1067,23 @@ function render() {
   if (l.type === 'overview') {
     content.innerHTML = buildOverview();
     prev.style.visibility = 'hidden';
-    next.textContent = 'Begin Lesson 1 →';
+    next.textContent = 'Begin Pillar 1 →';
     next.className = 'btn-nav btn-next';
   } else if (l.type === 'cert') {
-    if (l.gated && !emailOk) { showGate(); buildSidebar(); updateBars(); return; }
+    const allPillarsDone = [1,2,3,4,5,6,7,8].every(i => done.has(i));
+    if (!emailOk) { showGate(); buildSidebar(); updateBars(); return; }
+    if (!allPillarsDone) {
+      // Show locked cert message
+      content.innerHTML = `<div class="gate">
+        <div class="gate-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h2>Complete all 8 Pillars to unlock your certificate</h2>
+        <p>You're almost there. Finish all pillars to earn your certificate of completion.</p>
+      </div>`;
+      prev.style.visibility = 'visible';
+      next.style.display = 'none';
+      ci.textContent = 'Complete all pillars first';
+      buildSidebar(); updateBars(); return;
+    }
     content.innerHTML = buildCert();
     prev.style.visibility = 'visible';
     next.style.display = 'none';
@@ -1074,7 +1093,7 @@ function render() {
     content.innerHTML = buildLesson(l);
     prev.style.visibility = cur <= 1 ? 'hidden' : 'visible';
     const isLast = cur === LESSONS.length - 2;
-    next.textContent = isLast ? 'Finish & get certificate →' : 'Next →';
+    next.textContent = isLast ? 'Finish & get certificate →' : 'Next Pillar →';
     next.className = isLast ? 'btn-nav btn-finish' : 'btn-nav btn-next';
 
     // Wire up textarea auto-save + live validation
