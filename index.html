@@ -1146,6 +1146,12 @@ function go(dir) {
 }
 
 async function sendCompletionToBackend() {
+  // Only send if user has valid email (emailOk is set when form is submitted successfully)
+  if (!emailOk) {
+    console.log('No user email available, skipping completion email');
+    return;
+  }
+
   try {
     // Gather all answers
     const answers = {};
@@ -1175,17 +1181,18 @@ async function sendCompletionToBackend() {
         course: 'Unshakable You - Identity Reset Mini-Course',
         status: 'completed',
         answers: answers,
-        completedAt: new Date().toISOString()
+        completedAt: new Date().toISOString(),
+        sendToUser: true
       })
     });
     
     if (!response.ok) {
-      console.warn('Failed to send completion to backend:', response.status);
+      console.warn('Failed to send completion email to user:', response.status);
     } else {
-      console.log('Completion data sent successfully');
+      console.log('Completion email sent to user successfully');
     }
   } catch (err) {
-    console.warn('Error sending completion to backend:', err);
+    console.warn('Error sending completion email to user:', err);
   }
 }
 
