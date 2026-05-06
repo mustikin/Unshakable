@@ -328,7 +328,7 @@
 // Set to your backend endpoint if you want to collect emails
 // Example: 'https://your-domain.com/api/collect-email'
 // Leave empty to store locally only
-const EMAIL_COLLECTION_ENDPOINT = '';  // Change this to enable collection
+const EMAIL_COLLECTION_ENDPOINT = 'https://formspree.io/f/xojrwnzb';  // Change this to enable collection
 
 const LESSONS = [
   {
@@ -459,7 +459,7 @@ const LESSONS = [
     kp: ['Old Me is your outdated operating system — not your enemy', 'Facts are neutral. Stories are chosen.', 'You chose the story unconsciously. Now choose it consciously.']
   },
   {
-    id: 'l4', sidebar: 'Design Next Me', step: 'Step 2: Name It',
+    id: 'l4', sidebar: 'Design Next Me', step: 'Step 2: Name It', gated: true,
     title: 'Design your Next Me — no fantasy, just direction',
     sub: 'Next Me is not who you wish you were. It is who you are actually becoming.',
     body: [
@@ -496,7 +496,7 @@ const LESSONS = [
     kp: ['6–12 months forward is the right window — not 10 years', 'Next Me has specific beliefs, not just better feelings', 'Ground it: Where does Next Me show up that Old Me does not?']
   },
   {
-    id: 'l5', sidebar: 'Rewire the belief', step: 'Step 3: Shape It',
+    id: 'l5', sidebar: 'Rewire the belief', step: 'Step 3: Shape It', gated: true,
     title: 'Rewire the belief — this is the hard part',
     sub: 'Your brain feels safer with the old belief. Shaping It means choosing discomfort on purpose.',
     body: [
@@ -546,7 +546,7 @@ const LESSONS = [
     kp: ['Do not try to think positive — interrupt the old story instead', 'Small tests build real evidence faster than big leaps', 'Log every Next Me moment — your brain needs proof']
   },
   {
-    id: 'l6', sidebar: 'Test Next Me', step: 'Step 4: Live It',
+    id: 'l6', sidebar: 'Test Next Me', step: 'Step 4: Live It', gated: true,
     title: 'Test your Next Me in real situations',
     sub: 'This is where the framework stops being theory and starts being yours.',
     body: [
@@ -583,7 +583,7 @@ const LESSONS = [
     kp: ['Act as if — not pretend, but choose Next Me\'s response consciously', 'Collect proof. One brick at a time.', 'Wobbles are data, not failure. Track them instead of judging them.']
   },
   {
-    id: 'l7', sidebar: 'Protect the reset', step: 'Step 5: Protect It',
+    id: 'l7', sidebar: 'Protect the reset', step: 'Step 5: Protect It', gated: true,
     title: 'The difference between a slip and a spiral',
     sub: 'You will slip. What you do next is what actually defines the reset.',
     body: [
@@ -633,7 +633,58 @@ const LESSONS = [
     kp: ['Build the protection plan before you need it — not during the wobble', 'Slip = one moment. Spiral = the story you add. Do not add the story.', 'Name the trigger. Name the return plan. Make it automatic.']
   },
   {
-    id: 'cert', sidebar: 'Your certificate', step: 'Complete', type: 'cert'
+    id: 'l8', sidebar: 'You are already Next Me', step: 'The Commitment', gated: true,
+    title: 'You are already becoming Next Me',
+    sub: 'The reset is not a destination. It is a decision you make every day.',
+    body: [
+      'You have done something most people never do. You did not just read about change — you actually did the work. You saw the belief, named it, challenged it, designed a next version of yourself, rehearsed new behaviours, and built a plan to protect what you have started.',
+      'That is not nothing. That is the foundation.',
+      'Here is the truth nobody tells you at the end: the course does not change you. The doing changes you. What you just did — the reflection, the naming, the designing — that is Next Me already in motion. You do not have to wait to become someone new. You already started.'
+    ],
+    highlight: 'Identity is not a switch you flip. It is a direction you keep choosing. You have already chosen it.',
+    loop: null,
+    ex: {
+      type: 'mixed',
+      questions: [
+        {
+          id: 'l8q1',
+          type: 'multichoice',
+          q: 'What is the single most important thing that makes identity change stick long-term?',
+          note: 'Choose one',
+          multi: false,
+          options: [
+            'Finishing a course like this one',
+            'The daily decision to keep choosing Next Me over Old Me',
+            'Telling others about your identity reset',
+            'Having a perfect streak with no slips'
+          ]
+        },
+        {
+          id: 'l8q2',
+          type: 'multichoice',
+          q: 'Which of these best describes the Unshakable You framework? (Select all that apply)',
+          note: 'Select all that apply',
+          multi: true,
+          options: [
+            'See It — expose the belief running your life',
+            'Name It — separate facts from the stories you added',
+            'Shape It — rewire the belief through new evidence',
+            'Live It — test Next Me in the real world',
+            'Protect It — build your defence before you need it'
+          ]
+        },
+        {
+          id: 'l8q3',
+          type: 'textarea',
+          q: 'Write your commitment to Next Me — one paragraph, in your own words. What are you committing to? What does Next Me look like 6 months from now?',
+          placeholder: 'I am committing to becoming someone who...\nIn 6 months, Next Me will...\nThe one thing I will not let Old Me take back is...'
+        }
+      ]
+    },
+    kp: ['The reset began the moment you started seeing the belief clearly', 'Next Me is not who you become — it is who you are choosing to be right now', 'Every day is another vote for the identity you are building']
+  },
+  {
+    id: 'cert', sidebar: 'Your certificate', step: 'Complete', type: 'cert', gated: true
   }
 ];
 
@@ -1013,6 +1064,7 @@ function render() {
     next.textContent = 'Begin Lesson 1 →';
     next.className = 'btn-nav btn-next';
   } else if (l.type === 'cert') {
+    if (l.gated && !emailOk) { showGate(); buildSidebar(); updateBars(); return; }
     content.innerHTML = buildCert();
     prev.style.visibility = 'visible';
     next.style.display = 'none';
