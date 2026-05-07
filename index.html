@@ -250,6 +250,17 @@
     .share-pill { padding: 5px 14px; border: 1px solid var(--border-mid); border-radius: var(--radius-pill); font-size: 12px; color: var(--text-mid); background: transparent; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.12s; }
     .share-pill:hover { background: var(--surface2); }
 
+    /* PRINT STYLES */
+    @media print {
+      body { background: white !important; color: black !important; }
+      .shell { box-shadow: none !important; border: none !important; height: auto !important; max-width: 100% !important; }
+      .topbar, .sidebar, .bottombar, .cert-ctas, .cert-share, .btn-reset { display: none !important; }
+      .content { padding: 0 !important; overflow: visible !important; }
+      .body-wrap { display: block !important; }
+      .cert { border: 1px solid #eee; }
+      .cert-top { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
     /* BOTTOM BAR */
     .bottombar { flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 12px 24px; border-top: 1px solid var(--border); background: var(--surface2); height: 54px; }
     .btn-nav { padding: 7px 18px; font-size: 13px; font-weight: 500; font-family: 'DM Sans', sans-serif; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.15s; }
@@ -887,7 +898,7 @@ function buildGate() {
       <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
     </div>
     <h2>Pillars 3–8 are free — just drop your details below</h2>
-    <p>Enter your name and email to unlock the rest of the course. You will also receive a copy of your reflection answers and your completion certificate.</p>
+    <p>Enter your name and email to unlock the rest of the course and track your progress through the framework.</p>
     <div class="gate-form">
       <input class="gate-input" type="text" id="gname" placeholder="Your first name" autocomplete="given-name"/>
       <div class="gate-row">
@@ -895,7 +906,7 @@ function buildGate() {
         <button class="gate-submit" onclick="submitGate()">Unlock →</button>
       </div>
       <div class="gate-error" id="gate-err">Please enter a valid name and email.</div>
-      <div class="gate-note">No spam. Used only to send your course progress and certificate.</div>
+      <div class="gate-note">No spam. Used to personalize your course experience and certificate.</div>
     </div>
   </div>`;
 }
@@ -947,7 +958,7 @@ async function sendEmailToBackend(name, email) {
 function buildCert() {
   const name = userName || 'You';
   const today = new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-  return `<div class="cert">
+  return `<div class="cert" id="cert-pdf-target">
     <div class="cert-top">
       <div class="cert-seal">✦</div>
       <div class="cert-eyebrow">Certificate of completion</div>
@@ -962,7 +973,8 @@ function buildCert() {
       </div>
       <div class="cert-msg">"You have seen the loop, named Old Me, designed Next Me, and built your protection plan. This is not the end of the reset — it is the beginning of it."<br><br>— A.B. Mustikin</div>
       <div class="cert-ctas">
-        <a class="btn-book" href="https://www.amazon.com/dp/B0G3PXRS9Y" target="_blank" rel="noopener">Get the full book — Unshakable You →</a>
+        <button class="btn-book" onclick="window.print()">Download Certificate (PDF) ↓</button>
+        <a class="btn-cohort" style="border:none; color: var(--gold-text); margin-top: -5px;" href="https://www.amazon.com/dp/B0G3PXRS9Y" target="_blank" rel="noopener">Get the full book — Unshakable You →</a>
         <a class="btn-cohort" href="https://mustikin.zo.space/NextMe" target="_blank" rel="noopener">Continue with the NextMe companion app</a>
         <div class="cert-date">Completed ${today}</div>
       </div>
