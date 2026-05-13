@@ -2,7 +2,7 @@
 
 Free interactive mini-course based on the *Unshakable You* framework. Eight pillars. Guided exercises. Certificate included.
 
-**→ [Open the Course](https://mustikin.github.io/unshakable)**
+**→ [Open the Course](https://mustikin.github.io/Unshakable)**
 
 ---
 
