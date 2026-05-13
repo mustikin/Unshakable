@@ -60,17 +60,23 @@ This is the **free companion** to the full *Unshakable You* ecosystem:
 - **Read the book** — *Unshakable You* at [mustik.in/book](https://mustik.in/book)
 - **Learn more** — Full guide & resources at [mustik.in/unshakable](https://mustik.in/unshakable)
 - **Stay connected** — Weekly articles & identity insights on Substack [@unshakableyoujourney](https://unshakableyoujourney.substack.com)
-- **Creator** — A.B. Mustikin | [@mustik.in](https://instagram.com/mustik.in) | [mustik.in](https://mustik.in)
+- **Creator** — A.B. Mustikin | [@mustik.in](https://instagram.com/mustik.in) | [mustik.in/unshakable](https://mustik.in/unshakable)
 
 ---
 
 ## Fork This Repo?
 
-Yes, fork it. Remix it. Run it on your own domain. The course is yours to share.
+Yes, you can fork it. Run your own copy on your own domain.
 
-**But** — the course content itself (the 8 pillars, exercises, framework) is locked. You can't change the lessons, add new pillars, or customize the questions. It's designed to be delivered as-is.
+**But the course content is locked.** You cannot:
+- Modify the 8 pillars or their names
+- Add, remove, or change the exercises or framework
+- Redistribute modified versions
+- Create a "derivative" course based on this framework
 
-If you want to **create your own course** with this same structure or design, build from scratch — this one is the *Unshakable You* course specifically.
+If you fork it, keep it exactly as-is — an unchanged copy of *Unshakable You*.
+
+Want to build your own course? Build from scratch. Don't modify this one.
 
 ---
 
@@ -87,9 +93,20 @@ If you want to **create your own course** with this same structure or design, bu
 
 ## License
 
-**Content** (the 8 pillars, exercises, framework): © A.B. Mustikin. All rights reserved.
+© A.B. Mustikin. All rights reserved.
 
-**Code** (HTML/CSS/JS structure): Available for personal and non-commercial use. See `index.html` source for details.
+**What you can do:**
+- Fork this repo and run it on your own domain
+- Share the link to the course
+- Use it for personal learning
+
+**What you cannot do:**
+- Modify the course content (pillars, exercises, framework)
+- Create or distribute modified versions
+- Commercialize or resell this course
+- Claim the framework as your own
+
+Violations will be subject to DMCA takedown or legal action.
 
 ---
 
