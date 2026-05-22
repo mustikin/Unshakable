@@ -57,7 +57,7 @@ Built with clean, minimal design — Playfair Display + DM Sans, charcoal + gold
 
 This is the **free companion** to the full *Unshakable You* ecosystem:
 
-- **Read the book** — *Unshakable You* at [mustik.in/book](https://mustik.in/book)
+- **Read the book** — *Unshakable You* at [[mustik.in/unshakableyoubook](https://mustik.in/unshakableyoubook)
 - **Learn more** — Full guide & resources at [mustik.in/unshakable](https://mustik.in/unshakable)
 - **Stay connected** — Weekly articles & identity insights on Substack [@unshakableyoujourney](https://unshakableyoujourney.substack.com)
 - **Creator** — A.B. Mustikin | [@mustik.in](https://instagram.com/mustik.in) | [mustik.in/unshakable](https://mustik.in/unshakable)
